@@ -198,7 +198,7 @@ nav {
 #meimg {
     float: left;
     max-width: 15%;
-    max-height: 15%;
+    height: auto;
     border: #fff solid 1vh;
     border-radius: 0.5vh;
 }
