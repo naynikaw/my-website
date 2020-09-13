@@ -47,6 +47,7 @@
     }
 }
 
+
 body {
     display: flex;
     background-color: #b1e8ff;
@@ -56,9 +57,9 @@ body {
     justify-content: space-around;
     align-items: center;
     min-height: 100vh;
-    padding: 5px;
     font-size: 4vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
   }
   
   #resume,
@@ -67,7 +68,7 @@ body {
   #work{
       color: white;
       text-decoration: none;
-      padding: 0px 30px;
+      padding: 0vw 2vw;
   }
 
 nav {
@@ -80,7 +81,7 @@ nav {
     width: 60vw;
     height: 30vw;
     position: absolute;
-    overflow: initial;
+    
     z-index: -1;
 }
 .rainbow::before {
@@ -105,6 +106,14 @@ nav {
     animation-fill-mode: forwards;
 }
 
+#main {
+    width: 100%;
+    margin: auto;
+    padding: 1vh 10vh;
+    background-color: #b1e8ff;
+    z-index: 1;
+}
+
 .name-effect {
   font-size: 4vw;
 }
@@ -114,7 +123,7 @@ nav {
   color: transparent;
   padding: 4px;
   position: relative;
-  top: -20px;
+  top: -3vh;
   overflow: hidden;
   animation: revealBlock 0s var(--t) forwards;
 }
@@ -155,11 +164,11 @@ nav {
 	background: #fff;
 	background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
-	border-radius: 100px;
-	box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-	height: 120px;
+	border-radius: 6.5vw;
+	box-shadow: 0 0.52vw 0.33vw rgba(0, 0, 0, 0.1);
+	height: 7.81vw;
 	position: relative;
-    width: 350px;
+    width: 22.78vw;
     z-index: -1;
 }
 
@@ -184,6 +193,18 @@ nav {
 	height: 180px;
 	right: 50px;
 	top: -90px;
+}
+
+#meimg {
+    float: left;
+    max-width: 15%;
+    max-height: 15%;
+    border: #fff solid 1vh;
+    border-radius: 0.5vh;
+}
+
+#medesc {
+    text-align: left;
 }
 
 footer {
