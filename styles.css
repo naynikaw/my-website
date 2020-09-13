@@ -1,0 +1,205 @@
+
+@keyframes revealBlock {
+    100% {
+      color: #fff;
+    }
+  }
+  
+  @keyframes revealingIn {
+  
+    0% {
+      width: 0;
+    }
+  
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes revealingOut {
+  
+    0% {
+      transform: translateX(0);
+    }
+  
+    100% {
+      transform: translateX(100%);
+    }
+  
+  }
+  
+  
+  @keyframes animateCloud {
+      0% {
+          margin-left: -100%;
+      }
+      100% {
+          margin-left: 100%;
+      }
+  }
+
+  @keyframes wipe {
+    0% {
+        transform: rotate(0deg);
+   }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+body {
+    display: flex;
+    background-color: #b1e8ff;
+    color: #fff;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    padding: 5px;
+    font-size: 4vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  #resume,
+  #about,
+  #blog,
+  #work{
+      color: white;
+      text-decoration: none;
+      padding: 0px 30px;
+  }
+
+nav {
+    display: flex;
+    position: sticky;
+    font-size: 2vw;
+}
+
+.rainbow {
+    width: 60vw;
+    height: 30vw;
+    position: absolute;
+    overflow: initial;
+    z-index: -1;
+}
+.rainbow::before {
+    content: '';
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    filter: hue-rotate(-15deg) contrast(95%);
+    opacity: 0.5;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, transparent, transparent 0vw, #9400d3 0vw, #9400d3 0vw, #9400d3 4.2857142857vw, #4b0082 4.2857142857vw, #4b0082 8.5714285714vw, #00f 8.5714285714vw, #00f 12.8571428571vw, #0f0 12.8571428571vw, #0f0 17.1428571429vw, #ff0 17.1428571429vw, #ff0 21.4285714286vw, #ff7f00 21.4285714286vw, #ff7f00 25.7142857143vw, #f00 25.7142857143vw, #f00 30vw);
+}
+
+.rainbow::after {
+    content: '';
+    position: absolute;
+    transform-origin: 30vw 30vw;
+    width: 60vw;
+    height: 30vw;
+    background-color: #b1e8ff;
+    animation: wipe 4s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.name-effect {
+  font-size: 4vw;
+}
+
+.name-reveal {
+  --t: calc(var(--td) + var(--d));
+  color: transparent;
+  padding: 4px;
+  position: relative;
+  top: -20px;
+  overflow: hidden;
+  animation: revealBlock 0s var(--t) forwards;
+}
+
+.name-reveal::after {
+  content: '';
+  width: 0%;
+  height: 100%;
+  padding-bottom: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--bc);
+  animation: revealingIn var(--td) var(--d) forwards, revealingOut var(--td) var(--t) forwards;
+}
+
+#desc {
+    font-size: 2vw;
+}
+
+.x1 {
+    animation: animateCloud 40s linear infinite;
+    animation-direction: alternate;
+	transform: scale(0.60);
+}
+.x2 {
+    animation: animateCloud 30s linear infinite;
+    animation-direction: alternate;
+	transform: scale(0.3);
+}
+.x3 {
+    animation: animateCloud 35s linear infinite;
+    animation-direction: alternate-reverse;
+	transform: scale(0.45);
+}
+
+.cloud {
+	background: #fff;
+	background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
+	border-radius: 100px;
+	box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+	height: 120px;
+	position: relative;
+    width: 350px;
+    z-index: -1;
+}
+
+.cloud:after, .cloud:before {
+    background: #fff;
+	content: '';
+	position: absolute;
+	z-indeX: -1;
+}
+
+.cloud:after {
+	border-radius: 100px;
+	height: 100px;
+	left: 50px;
+	top: -50px;
+	width: 100px;
+}
+
+.cloud:before {
+	border-radius: 200px;
+	width: 180px;
+	height: 180px;
+	right: 50px;
+	top: -90px;
+}
+
+footer {
+    vertical-align: bottom;
+}
+
+#github,
+#linkedin,
+#medium,
+#twitter,
+#mail {
+    height: 6vh;
+    width: auto;
+    margin: 0 20px 30px;
+    user-select: none;
+    bottom: 10px; 
+    z-index: 1;
+}
+
